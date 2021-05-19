@@ -27,7 +27,6 @@ const theme = {
 
 export default function App(props) {
   /*  const { route } = this.props;
-
   if (route.params) {
     const { key, nome } = route.params;
     console.log(key);
@@ -43,8 +42,8 @@ export default function App(props) {
           left={LeftContent}
         />
         <Card.Content>
-          <Title>Card Vitoria</Title>
-          <Paragraph>Card content</Paragraph>
+          <Title>Card João</Title>
+          <Paragraph>Card </Paragraph>
         </Card.Content>
         <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
         <Card.Actions>

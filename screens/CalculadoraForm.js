@@ -42,11 +42,9 @@ function ContatoForm() {
   const [num01, setNum01] = useState(0);
   const [num02, setNum02] = useState(0);
   const [total, setTotal] = useState(0);
-
   const somar = () => {
     setTotal(num01 + num02);
   };
-
   return (
     <View>
       <TextInput
