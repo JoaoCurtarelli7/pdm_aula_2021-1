@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Provider as PaperProvider,
   DefaultTheme,
@@ -11,6 +11,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import InicioScreens from "./screens/InicioScreens";
 import ContatoForm from "./screens/ContatoForm";
 import ContatoList from "./screens/ContatoList";
+import { View, Image } from "react-native";
 
 const Stack = createStackNavigator();
 
@@ -68,7 +69,36 @@ function CustomNavigationBar({ navigation, previous }) {
 }
 
 export default function App() {
+
+  const [appIsReady, setAppIsReadt] = useState(true);
+
+  useEffect(() => {
+
+    try {
+      setTimeout(() => setAppIsReadt(false), 6000)
+    } catch (error) {
+      console.warn(e)
+    }
+
+  });
+
   return (
+
+<View style={{
+  flex: 1,
+  alignItems: 'center',
+  flexDirection: 'row',
+  justifyContent: 'center',
+}}>
+
+
+{ appIsReady ? <View>
+
+
+  <Image source={require('./assets/santos-sfc.gif')}/>
+</View>:
+
+
     <PaperProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator
@@ -83,5 +113,7 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
+    }
+    </View>
   );
 }
